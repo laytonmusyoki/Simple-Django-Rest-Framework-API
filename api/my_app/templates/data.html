@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_book</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            width: 400px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 2px 2px 10px black;
+            padding: 6px;
+        }
+        .box input{
+            width: 100%;
+            height: 40px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 style="text-align: center;color: #555;">POST DATA</h1>
+    <form action="{% url 'add_book' %}" method="POST">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" style="background: tomato;color: white;border-radius: 30px;border: none;outline: none; cursor: pointer;" value="Post data">
+    </form>
+</div>
+    
+</body>
+</html>
